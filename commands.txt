@@ -1,0 +1,66 @@
+yum install -y wget >/dev/null
+cd /opt/
+wget https://storebits.docker.com/ee/rhel/sub-eae6958f-e3a7-4216-a002-3f06c3ddea7a/7/x86_64/stable/Packages/docker-ee-18.09.3-3.el7.x86_64.rpm
+wget https://storebits.docker.com/ee/rhel/sub-eae6958f-e3a7-4216-a002-3f06c3ddea7a/7/x86_64/stable/Packages/docker-ee-cli-18.09.3-3.el7.x86_64.rpm
+wget https://storebits.docker.com/ee/rhel/sub-eae6958f-e3a7-4216-a002-3f06c3ddea7a/7/x86_64/stable/Packages/containerd.io-1.2.4-3.1.el7.x86_64.rpm
+ls -l
+yum-config-manager --enable rhui-REGION-rhel-server-extras >/dev/null
+yum install containerd.io-1.2.4-3.1.el7.x86_64.rpm docker-ee-cli-18.09.3-3.el7.x86_64.rpm
+yum install docker-ee-18.09.3-3.el7.x86_64.rpm 
+systemctl status docker
+clear
+systemctl start docker
+systemctl status docker
+docker version
+docker --version
+docker image
+docker image ls
+clear
+docker image ls
+docker image pull hello-world:latest
+docker image ls
+docker image rm hello-world:latest
+docker image ls
+docker image pull hello-world:latest
+docker container
+docker container run --name myhello hello-world:latest
+docker image pull httpd:latest
+docker iamge ls
+docker image ls
+ipconfig
+fpconfig
+ifconfig
+docker container run -d -p 11000:80 --name myapache 2d1e5208483c
+docker container ls
+docker container run -d -p 11002:80 --name myapache-2 2d1e5208483c
+docker container ls
+docker container ls -a
+docker container stop myapache
+docker container ls
+docker container stop myapache
+docker container ls -a
+docker container kill myapache-2
+docker container ls -a
+docker container ls
+docker container start myapache-2
+docker container ls
+docker container ls -a
+docker container start myapache
+docker container ls
+docker container pause myapache
+docker container ls
+docker container unpause myapache
+docker container rm myhello
+docker container ls -a
+docker container rm myapache-2
+docker container rm -f myapache-2
+docker container ls -a
+docker container restart myapache-2
+docker container restart myapache
+docker container ls -a
+docker container logs myapache
+docker container stats myapache
+ps -ef | grep docker
+docker exec -it myapache /bin/bash
+docker container top myapache
+docker image inspect httpd:latest
